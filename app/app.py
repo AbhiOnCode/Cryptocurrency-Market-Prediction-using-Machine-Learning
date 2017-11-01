@@ -44,13 +44,41 @@ def btc():
     # return  '<h1>Predicting BitCoin Price for next 15 days</h1><br><br><h3><h3>{}</h3></h3></><br/><br/>'.format(test1)
     return render_template('btc.html')
 
+@app.route("/dash")
+def dash():
+    return render_template('dash.html')
+
 @app.route("/eth")
 def eth():
 	return render_template('eth.html')
 
+@app.route("/ethc")
+def ethc():
+    return render_template('ethc.html')
+
+@app.route("/ltc")
+def ltc():
+    return render_template('ltc.html')
+
+@app.route("/mon")
+def mon():
+    return render_template('mon.html')
+
+@app.route("/nem")
+def nem():
+    return render_template('nem.html')
+
+@app.route("/neo")
+def neo():
+    return render_template('neo.html')
+
 @app.route("/xrp")
 def xrp():
 	return render_template('xrp.html')
+
+@app.route("/str")
+def str():
+    return render_template('str.html')
 
 if __name__ == '__main__':
     app.run(debug = True)

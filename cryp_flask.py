@@ -8,8 +8,8 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
 
-    df = pd.read_csv('All_Crypto2.csv')
-    df2 = pd.read_csv('predict.csv')
+    df = pd.read_csv('data/All_Crypto2.csv')
+    df2 = pd.read_csv('data/predict.csv')
 
     X = pd.DataFrame(df['ID'])
     y = pd.DataFrame(df['BitCoin_Price'])

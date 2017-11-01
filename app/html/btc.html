@@ -81,14 +81,56 @@
               <form id="btcform" method="get" action="/">
                 <a class="nav-link" onclick="document.getElementById('btcform').submit();"><i class="icon-speedometer"></i>Bitcoin</a>
               </form>
-            </li><li class="nav-item">
+            </li>
+            <li class="nav-item">
+              <form id="dashform" method="get" action="/dash">
+                <a class="nav-link" onclick="document.getElementById('dashform').submit();"><i class="icon-speedometer"></i>Dash</a>
+              </form>
+            </li>
+            <li class="nav-item">
               <form id="ethform" method="get" action="/eth">
                 <a class="nav-link" onclick="document.getElementById('ethform').submit();"><i class="icon-speedometer"></i>Ethereum</a>
               </form>
             </li>
             <li class="nav-item">
+              <form id="ethcform" method="get" action="/ethc">
+                <a class="nav-link" onclick="document.getElementById('ethcform').submit();"><i class="icon-speedometer"></i>Eth Classic</a>
+              </form>
+            </li>
+
+           
+            <li class="nav-item">
+              <form id="ltcform" method="get" action="/ltc">
+                <a class="nav-link" onclick="document.getElementById('ltcform').submit();"><i class="icon-speedometer"></i>Litecoin</a>
+              </form>
+            </li>
+            
+            <li class="nav-item">
+              <form id="monform" method="get" action="/mon">
+                <a class="nav-link" onclick="document.getElementById('monform').submit();"><i class="icon-speedometer"></i>Monero</a>
+              </form>
+            </li>
+            
+             <li class="nav-item">
+              <form id="nemform" method="get" action="/nem">
+                <a class="nav-link" onclick="document.getElementById('nemform').submit();"><i class="icon-speedometer"></i>NEM</a>
+              </form>
+            </li>
+            <li class="nav-item">
+              <form id="neoform" method="get" action="/neo">
+                <a class="nav-link" onclick="document.getElementById('neoform').submit();"><i class="icon-speedometer"></i>NEO</a>
+              </form>
+            </li>
+
+            <li class="nav-item">
               <form id="xrpform" method="get" action="/xrp">
                 <a class="nav-link" onclick="document.getElementById('xrpform').submit();"><i class="icon-speedometer"></i>Ripple</a>
+              </form>
+            </li>
+
+            <li class="nav-item">
+              <form id="strform" method="get" action="/str">
+                <a class="nav-link" onclick="document.getElementById('strform').submit();"><i class="icon-speedometer"></i>Strastis</a>
               </form>
             </li>
             
@@ -197,36 +239,31 @@
                  <div class="card-footer">
                   <ul>
                     <li>
-                      <div class="text-muted">Estimated</div>
-                      <strong>Prediction</strong>
+                     
                       <div class="progress progress-xs mt-2">
                         <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </li>
                     <li class="d-none d-md-table-cell">
-                      <div class="text-muted">Next week</div>
-                      <strong>5000$</strong>
+                     
                       <div class="progress progress-xs mt-2">
                         <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </li>
                     <li>
-                      <div class="text-muted">Next day</div>
-                      <strong>5000$</strong>
+                     
                       <div class="progress progress-xs mt-2">
                         <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </li>
                     <li class="d-none d-md-table-cell">
-                      <div class="text-muted">2 weeks</div>
-                      <strong>5000$</strong>
+                     
                       <div class="progress progress-xs mt-2">
                         <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </li>
                     <li class="d-none d-md-table-cell">
-                      <div class="text-muted">Average</div>
-                      <strong>5000$</strong>
+                      
                       <div class="progress progress-xs mt-2">
                         <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
@@ -262,7 +299,7 @@
 
     <script>
       data1 = '{{ url_for('static', filename='data/crypto.csv') }}';
-      data2 = '{{ url_for('static', filename='data/result.csv') }}';
+      data2 = '{{ url_for('static', filename='data/final1.csv') }}';
       Plotly.d3.csv(data1, function(rows){
         console.log(rows);
         var actual = {
@@ -272,7 +309,7 @@
         return row['ID'];
       }),
       y: rows.map(function(row){          // set the x-data
-        return row['BitCoin_Price'];
+        return row['Bitcoin'];
       }),
       line: {                             // set the width of the line.
         width: 1,
@@ -296,10 +333,10 @@
       type: 'scatter',                    // set the chart type
       mode: 'lines',                      // connect points with lines
       x: rows.map(function(row){          // set the x-data
-        return row['ID2'];
+        return row['ID'];
       }),
       y: rows.map(function(row){          // set the x-data
-        return row['BitCoin_Price'];
+        return row['Bitcoin'];
       }),
       line: {                             // set the width of the line.
         width: 1,

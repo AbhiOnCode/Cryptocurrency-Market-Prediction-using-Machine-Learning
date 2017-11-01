@@ -1,4 +1,4 @@
-# LSTM for international airline passengers problem with regression framing
+# LSTM for cryptocurrencies price prediction problem with regression framing
 import numpy
 # import matplotlib.pyplot as plt
 from pandas import read_csv
@@ -20,10 +20,12 @@ def create_dataset(dataset, look_back=5):
 		dataX.append(a)
 		dataY.append(dataset[i + look_back, 0])
 	return numpy.array(dataX), numpy.array(dataY)
+
 # fix random seed for reproducibility
 numpy.random.seed(7)
+
 # load the dataset
-dataframe = read_csv('int2.csv', usecols=[1], engine='python', skipfooter=3)
+dataframe = read_csv('data/int2.csv', usecols=[1], engine='python', skipfooter=3)
 dataset = dataframe.values
 dataset = dataset.astype('float32')
 # normalize the dataset

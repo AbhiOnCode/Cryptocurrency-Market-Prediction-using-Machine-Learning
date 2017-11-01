@@ -1,0 +1,2 @@
+Bitcoin,Dash,Ethereum,Ethereum_Classic,Litecoin,Monero,Nem,Neo,Ripple,Stratis
+/,dash,eth,ethc,ltc,mon,nem,neo,xrp,str
