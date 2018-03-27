@@ -1,6 +1,8 @@
+'''
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt 
+'''
 from flask import Flask , redirect , url_for , request , render_template , jsonify , json
 
 app = Flask(__name__, template_folder='html/')
